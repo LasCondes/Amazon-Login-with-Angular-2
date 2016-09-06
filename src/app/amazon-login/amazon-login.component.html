@@ -1,0 +1,21 @@
+<h1>Amazon Login SDK Demo</h1>
+<div *ngIf="!waiting">
+  <div *ngIf="sdkLoaded">
+      <button (click)="login()" *ngIf="!loggedIn">Login</button>
+      <div *ngIf="loggedIn"><p>User Logged In</p><p> Details : {{profileDetails}}</p></div>
+    <p></p>
+    <p></p>
+    <p *ngIf="loggedIn">
+      <button (click)="logout()">Logout</button>
+    </p>
+    <p></p>
+  </div>
+  <div *ngIf="!sdkLoaded">
+    <p>There was an error while loading sdk</p>
+    <p><b>Details : </b></p>
+    <p>{{error}}</p>
+  </div>
+</div>
+<div *ngIf="waiting">
+  Loading SDK....
+</div>
